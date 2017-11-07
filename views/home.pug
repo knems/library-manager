@@ -1,36 +1,31 @@
-extends header
-
+extends ./layout
 block content
-	body
-		h1 Library Manager
-		p Welcome to Library Manager
-		ul
-			li
-				| Books
-				ul
-					li
-						a(href="/new_book") New Book
-					li
-						a(href="/all_books") List All
-					li
-						a(href="/overdue_books") List Overdue
-					li
-						a(href="/checked_books") List Checked Out
-			li
-				| Patrons
-				ul
-					li
-						a(href="/patrons/new") New Patron
-					li
-						a(href="all_patrons.html") List All
-			li
-				| Loans
-				ul
-					li
-						a(href="new_loan.html") New Loan
-					li
-						a(href="all_loans.html") List All
-					li
-						a(href="overdue_loans.html") List Overdue
-					li
-						a(href="checked_loans.html") List Checked Out
+    h1 #{title}
+    p Welcome to Library Manager
+    ul
+        li Books
+            ul
+                li
+                    a(href='/books/new') New Book
+                li
+                    a(href='/books') List All
+                li
+                    a(href='/books?filter=overdue') List Overdue
+                li
+                    a(href='/books?filter=checked_out') List Checked Out
+        li Patrons
+            ul
+                li
+                    a(href='/patrons/new') New Patron
+                li
+                    a(href='/patrons') List All
+        li Loans
+            ul
+                li
+                    a(href='/loans/new') New Loan
+                li
+                    a(href='/loans') List All
+                li
+                    a(href='/loans?filter=overdue') List Overdue
+                li
+                    a(href='/loans?filter=checked_out') List Checked Out

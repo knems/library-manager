@@ -1,17 +1,14 @@
-var express = require('express');
-var router = express.Router();
+'use strict';
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-	res.render('home');
-});
+const express = require('express');
+const router = express.Router();
+const models = require('../models');
 
-router.get('/all_patrons', function(req, res, next){
-	res.render('all_patrons');
-});
-
-router.get('/all_loans', function(req, res, next){
-	res.render('all_loans');
+// GET home page
+router.get('/', (req, res, next) => {
+    res.render('home', {
+        title: 'Library Manager'
+    });
 });
 
 module.exports = router;
