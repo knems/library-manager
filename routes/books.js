@@ -80,7 +80,7 @@ router.post('/new', (req, res, next) => {
     Book.create(req.body).then((newBook) => {
         res.redirect('/books');
     }).catch(err => {
-        if (err.name === 'SequelizeValidationError') {
+        if (err.name === 'SequelizeValidationError' || res.status(500)) {
             console.log(err.errors);
             res.render('new_book', {
                 title: title,
@@ -89,9 +89,6 @@ router.post('/new', (req, res, next) => {
                 firstPublished: firstPublished,
                 errors: err.errors
             });
-        } else {
-            console.log('Error: ' + err);
-            res.status(500).send(err);
         }
     })
 });

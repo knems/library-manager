@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     first_name: { type: DataTypes.STRING, validate: { notEmpty: {msg: 'Please enter a first name!' } } },
     last_name: { type: DataTypes.STRING, validate: { notEmpty: {msg: 'Please enter a last name!' } } },
     address: { type: DataTypes.STRING, validate: { notEmpty: {msg: 'Please enter an address!' } } },
-    email: { type: DataTypes.STRING, validate: { notEmpty: {msg: 'Please enter an email!'} } },
+    email: { type: DataTypes.STRING, validate: { isEmail: true, notEmpty: {msg: 'Please enter an email!'} } },
     library_id: { type: DataTypes.STRING, validate: { notEmpty: {msg: 'Please enter a library id!'} } },
     zip_code: { type: DataTypes.INTEGER, validate: { notEmpty: {msg: 'Please enter a zip code!' } } }
   });
